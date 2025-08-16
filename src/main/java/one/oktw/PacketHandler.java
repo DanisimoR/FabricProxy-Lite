@@ -50,11 +50,12 @@ class PacketHandler {
                 handler.disconnect(Text.of("Unable to read player profile"));
                 return;
             }
-
+            
             if (config.getHackEarlySend()) {
                 handler.onHello(new LoginHelloC2SPacket(profile.getName(), profile.getId()));
             }
-
+            
+            ((ServerLoginNetworkHandlerAccessor) handler).setProfile(profile);
             ((ServerLoginNetworkHandlerAccessor) handler).setProfile(profile);
         }));
     }
