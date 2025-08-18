@@ -56,7 +56,6 @@ class PacketHandler {
             }
             
             ((ServerLoginNetworkHandlerAccessor) handler).setProfile(profile);
-            ((ServerLoginNetworkHandlerAccessor) handler).setProfile(profile);
         }));
     }
 }

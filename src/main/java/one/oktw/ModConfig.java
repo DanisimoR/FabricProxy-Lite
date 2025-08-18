@@ -27,6 +27,7 @@ public class ModConfig {
             }
             
             File configFile = configPath.toFile();
+            
             try {
                 new TomlWriter().write(config, configFile);
             } catch (IOException e) {
@@ -34,11 +35,13 @@ public class ModConfig {
             }
             
             String envDisconnectMessage = System.getenv("FABRIC_PROXY_MESSAGE");
+            
             if (envDisconnectMessage!=null) {
                 config.disconnectMessage = envDisconnectMessage;
             }
             
             String envSecret = System.getenv("FABRIC_PROXY_SECRET");
+            
             if (envSecret!=null) {
                 config.secret = envSecret;
             } else {
